@@ -10,7 +10,7 @@ COPY . /opt
 WORKDIR /opt/app
 
 ARG BUILD_ARCH=amd64
-ARG NIGHTSCOUT_VERSION=14.2.2
+ARG NIGHTSCOUT_VERSION=dev
 # hadolint ignore=DL3008
 RUN \
     URL="http://archive.ubuntu.com/ubuntu/" \
@@ -26,7 +26,8 @@ RUN \
     && curl -sL "https://deb.nodesource.com/setup_14.x" | bash - \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        mongodb-server=1:3.6.3-0ubuntu1.4 \
+        mongodb-server \
+        vim \
         nodejs \
         git \
         webpack \
