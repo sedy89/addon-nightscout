@@ -9,7 +9,7 @@ RUN mkdir -p /opt/app
 COPY . /opt
 WORKDIR /opt/app
 
-ARG BUILD_ARCH=amd64
+ARG BUILD_ARCH=aarch64
 ARG NIGHTSCOUT_VERSION=dev
 # hadolint ignore=DL3008
 RUN \
@@ -62,14 +62,14 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Marcio Granzotto <oscensores@gmail.com>" \
+    maintainer="Me \
     org.opencontainers.image.title="Nightscout" \
     org.opencontainers.image.description="Nightscout acts as a web-based CGM (Continuous Glucose Montinor) to allow multiple caregivers to remotely view a patients glucose data in realtime." \
     org.opencontainers.image.vendor="Marcio Granzotto" \
     org.opencontainers.image.authors="Marcio Granzotto <oscensores@gmail.com>" \
     org.opencontainers.image.licenses="GNUv3" \
-    org.opencontainers.image.source="https://github.com/marciogranzotto/addon-nightscout" \
-    org.opencontainers.image.documentation="https://github.com/marciogranzotto/addon-nightscout/blob/master/README.md" \
+    org.opencontainers.image.source="https://github.com/sedy89/addon-nightscout" \
+    org.opencontainers.image.documentation="https://github.com/sedy89/addon-nightscout/blob/master/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
     org.opencontainers.image.revision=${BUILD_REF} \
     org.opencontainers.image.version=${BUILD_VERSION}
