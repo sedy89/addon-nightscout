@@ -1,6 +1,6 @@
 {
   "name": "Nightscout",
-  "version": "dev",
+  "version": "master",
   "slug": "nightscout",
   "description": "Nightscout acts as a web-based CGM (Continuous Glucose Montinor) to allow multiple caregivers to remotely view a patients glucose data in realtime.",
   "url": "https://github.com/sedy89/addon-nightscout",
