@@ -8,7 +8,6 @@
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5423]",
   "startup": "services",
   "boot": "auto",
-  "image": "sedy89/image-{arch}-addon-nightscout",
   "hassio_role": "default",
   "ports": {
     "5423/tcp": 5423
