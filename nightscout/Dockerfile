@@ -13,14 +13,13 @@ ARG BUILD_ARCH=aarch64
 ARG NIGHTSCOUT_VERSION=14.2.5
 # hadolint ignore=DL3008
 RUN \
-    NODEURL="https://deb.nodesource.com/setup_16.x" \
-    && NODEJS="nodejs=16.17.0-deb-1nodesource1" \
-    && curl -sL $NODEURL | bash - \
+    curl -sL "https://deb.nodesource.com/setup_14.x" | bash - \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         mongodb  \
-        "${NODEJS}" \
+        nodejs \
         git   \
+	webpack \
         vim  \
         build-essential \
         python2.7  \
