@@ -10,40 +10,32 @@ COPY . /opt
 WORKDIR /opt/app
 
 ARG BUILD_ARCH=aarch64
-ARG NIGHTSCOUT_VERSION=master
+ARG NIGHTSCOUT_VERSION=14.2.5
 # hadolint ignore=DL3008
 RUN \
-    URL="http://archive.ubuntu.com/ubuntu/" \
-    && if [ "${BUILD_ARCH}" = "aarch64" ]; then \
-        URL="http://ports.ubuntu.com/ubuntu-ports/"; \
-    fi \
-    && echo "deb ${URL} bionic universe" \
-        > /etc/apt/sources.list.d/bionic-universe.list \
-    \
-    && echo "deb ${URL} bionic main" \
-        > /etc/apt/sources.list.d/bionic-main.list \
-    \
-    && curl -sL "https://deb.nodesource.com/setup_14.x" | bash - \
+    NODEURL="https://deb.nodesource.com/setup_16.x" \
+    && NODEJS="nodejs=16.17.0-deb-1nodesource1" \
+    && curl -sL $NODEURL | bash - \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        mongodb-server \
-        vim \
-        nodejs \
-        git \
-        webpack \
+        mongodb  \
+        "${NODEJS}" \
+        git   \
+        vim  \
         build-essential \
-        python2.7 \
-        nginx \
-        libnginx-mod-http-lua \
+        python2.7  \
+        nginx  \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
-    \
-    && git clone --depth 1 --branch ${NIGHTSCOUT_VERSION} git://github.com/nightscout/cgm-remote-monitor.git /opt/app \
-    \
-    && npm install \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git clone --depth 1 --branch ${NIGHTSCOUT_VERSION} https://github.com/nightscout/cgm-remote-monitor.git /opt/app
+
+RUN npm install -g npm@8.18.0 \
+    && npm install husky --save-dev \
+    && npm install webpack webpack-dev-server --save-dev \
     && npm run postinstall \
-    && npm run env \
-    && npm audit fix
+    && npm run env 
+    # && npm audit fix
 
 VOLUME ["/data/db"]
 
@@ -62,11 +54,11 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Me \
+    maintainer="Andreas Sedlmayer <test@nono.no>" \
     org.opencontainers.image.title="Nightscout" \
     org.opencontainers.image.description="Nightscout acts as a web-based CGM (Continuous Glucose Montinor) to allow multiple caregivers to remotely view a patients glucose data in realtime." \
-    org.opencontainers.image.vendor="Marcio Granzotto" \
-    org.opencontainers.image.authors="Marcio Granzotto <oscensores@gmail.com>" \
+    org.opencontainers.image.vendor="Andreas Sedlmayer" \
+    org.opencontainers.image.authors="Andreas Sedlmayer <test@nono.no>" \
     org.opencontainers.image.licenses="GNUv3" \
     org.opencontainers.image.source="https://github.com/sedy89/addon-nightscout" \
     org.opencontainers.image.documentation="https://github.com/sedy89/addon-nightscout/blob/master/README.md" \
