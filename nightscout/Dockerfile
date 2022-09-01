@@ -23,7 +23,7 @@ RUN \
         vim  \
         build-essential \
         python2.7  \
-        nginx  \
+        nginx-extras  \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
