@@ -43,7 +43,11 @@
       "bgi",
       "pump",
       "openaps"
-    ]
+    ],
+    "CARELINK_USERNAME": "",
+    "CARELINK_PASSWORD": "",
+    "NS": "",  
+    "MMCONNECT_SERVER": "",  
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
