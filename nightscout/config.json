@@ -44,10 +44,10 @@
       "pump",
       "openaps"
     ],
-    "CARELINK_USERNAME": "",
-    "CARELINK_PASSWORD": "",
-    "NS": "",  
-    "MMCONNECT_SERVER": ""
+    "carelink_username": "",
+    "carelink_password": "",
+    "ns": "",
+    "mmconnect_server": ""
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
