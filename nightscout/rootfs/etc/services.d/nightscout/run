@@ -27,15 +27,15 @@ if bashio::config.has_value 'mmconnect_password'; then
     bashio::log.debug "Setting up MMCONNECT_PASSWORD: ${mmconnect_password}"
     export MMCONNECT_PASSWORD="${mmconnect_password}"
 fi
-if bashio::config.has_value 'mmconnect_verbose'; then
-    readonly mmconnect_verbose=$(bashio::config 'mmconnect_verbose')
-    bashio::log.debug "Setting up MMCONNECT_VERBOSE: ${mmconnect_verbose}"
-    export MMCONNECT_VERBOSE="${mmconnect_verbose}"
-fi
 if bashio::config.has_value 'mmconnect_server'; then
     readonly mmconnect_server=$(bashio::config 'mmconnect_server')
     bashio::log.debug "Setting up MMCONNECT_SERVER: ${mmconnect_server}"
     export MMCONNECT_SERVER="${mmconnect_server}"
+fi
+if bashio::config.has_value 'mmconnect_countrycode'; then
+    readonly mmconnect_countrycode=$(bashio::config 'mmconnect_countrycode')
+    bashio::log.debug "Setting up MMCONNECT_COUNTRYCODE: ${mmconnect_countrycode}"
+    export MMCONNECT_COUNTRYCODE="${mmconnect_countrycode}"
 fi
 
 export API_SECRET="${api_key}"

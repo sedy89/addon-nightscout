@@ -1,6 +1,6 @@
 {
   "name": "Nightscout",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "slug": "nightscout",
   "description": "Nightscout acts as a web-based CGM (Continuous Glucose Montinor) to allow multiple caregivers to remotely view a patients glucose data in realtime.",
   "url": "https://github.com/sedy89/addon-nightscout",
@@ -47,8 +47,8 @@
     ],
     "mmconnect_user_name": "",
     "mmconnect_password": "",
-    "mmconnect_verbose": true,
-    "mmconnect_server": "EU"
+    "mmconnect_server": "EU",
+    "mmconnect_countrycode": "de"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
@@ -62,7 +62,7 @@
     "plugins": ["str"],
     "mmconnect_user_name": "str?",
     "mmconnect_password": "str?",
-    "mmconnect_verbose": "bool",
-    "mmconnect_server": "str?"
+    "mmconnect_server": "str?",
+    "mmconnect_countrycode": "str?"
   }
 }
