@@ -10,7 +10,7 @@ COPY . /opt
 WORKDIR /opt/app
 
 ARG BUILD_ARCH=aarch64
-ARG NIGHTSCOUT_VERSION=14.2.5
+ARG NIGHTSCOUT_VERSION=dev
 # hadolint ignore=DL3008
 RUN \
     curl -sL "https://deb.nodesource.com/setup_14.x" | bash - \

@@ -1,10 +1,10 @@
 {
   "name": "Nightscout",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "slug": "nightscout",
   "description": "Nightscout acts as a web-based CGM (Continuous Glucose Montinor) to allow multiple caregivers to remotely view a patients glucose data in realtime.",
   "url": "https://github.com/sedy89/addon-nightscout",
-  "arch": ["armv7", "aarch64", "amd64", "i386"],
+  "arch": ["aarch64"],
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5423]",
   "startup": "services",
   "boot": "auto",
@@ -23,7 +23,7 @@
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem",
     "api_key": "",
-    "auth_default_roles": "readable",
+    "auth_default_roles": "admin",
     "theme": "colors",
     "import_config_url": "",
     "plugins": [
@@ -45,10 +45,12 @@
       "openaps",
       "mmconnect"
     ],
+    "de_normalize_dates": true,
     "mmconnect_user_name": "",
     "mmconnect_password": "",
-    "mmconnect_server": "EU",
-    "mmconnect_countrycode": "de"
+    "mmconnect_server": "",
+    "mmconnect_countrycode": "",
+    "mmconnect_verbose": false
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
@@ -60,9 +62,11 @@
     "theme": "list(default|colors|colorblindfriendly)",
     "import_config_url": "str?",
     "plugins": ["str"],
+    "de_normalize_dates": "bool",
     "mmconnect_user_name": "str?",
     "mmconnect_password": "str?",
     "mmconnect_server": "str?",
-    "mmconnect_countrycode": "str?"
+    "mmconnect_countrycode": "str?",
+    "mmconnect_verbose": "bool"
   }
 }
