@@ -19,7 +19,7 @@ RUN \
         mongodb  \
         nodejs \
         git   \
-	webpack \
+        webpack \
         vim  \
         build-essential \
         python2.7  \
@@ -53,11 +53,11 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Andreas Sedlmayer <test@test.no>" \
+    maintainer="Andreas Sedlmayer <badaboom.as@gmail.com>" \
     org.opencontainers.image.title="Nightscout" \
     org.opencontainers.image.description="Nightscout acts as a web-based CGM (Continuous Glucose Montinor) to allow multiple caregivers to remotely view a patients glucose data in realtime." \
     org.opencontainers.image.vendor="Andreas Sedlmayer" \
-    org.opencontainers.image.authors="Andreas Sedlmayer <test@test.no>" \
+    org.opencontainers.image.authors="Andreas Sedlmayer" \
     org.opencontainers.image.licenses="GNUv3" \
     org.opencontainers.image.source="https://github.com/sedy89/addon-nightscout" \
     org.opencontainers.image.documentation="https://github.com/sedy89/addon-nightscout/blob/master/README.md" \
