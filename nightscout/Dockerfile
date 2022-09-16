@@ -34,7 +34,6 @@ RUN npm install -g npm@8.18.0 \
     && npm install webpack webpack-dev-server --save-dev \
     && npm run postinstall \
     && npm run env 
-    # && npm audit fix
 
 VOLUME ["/data/db"]
 
