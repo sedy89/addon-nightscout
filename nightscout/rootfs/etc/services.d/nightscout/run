@@ -8,7 +8,7 @@ declare -a options
 
 # Wait for MongoDB to become available
 # Ensures the data of the DB is store outside the container
-if ! bashio::fs.file_exists '/var/lib/mongodb/mongod.lock'; then
+if bashio::fs.file_exists '/var/lib/mongodb/mongod.lock'; then
 	bashio::log.info 'Cleaning mongod.lock file if exists...'
 	rm /var/lib/mongodb/mongod.lock
 fi
