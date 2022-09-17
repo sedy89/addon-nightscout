@@ -14,7 +14,7 @@ if bashio::fs.file_exists '/var/lib/mongodb/mongod.lock'; then
 fi
 
 bashio::log.info 'Starting mongodb service...'
-service mongodb start
+mongod --fork --config /etc/mongod.conf
 bashio::net.wait_for 27017
 
 bashio::log.info 'Starting the Nightscout server...'
