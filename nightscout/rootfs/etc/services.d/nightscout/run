@@ -7,8 +7,12 @@
 declare -a options
 
 # Wait for MongoDB to become available
-bashio::log.info 'Cleaning mongod.lock file if exists...'
-rm /var/lib/mongodb/mongod.lock
+# Ensures the data of the DB is store outside the container
+if ! bashio::fs.file_exists '/var/lib/mongodb/mongod.lock'; then
+	bashio::log.info 'Cleaning mongod.lock file if exists...'
+	rm /var/lib/mongodb/mongod.lock
+fi
+
 bashio::log.info 'Starting mongodb service...'
 service mongodb start
 bashio::net.wait_for 27017
