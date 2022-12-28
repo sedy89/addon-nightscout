@@ -9,7 +9,7 @@ RUN mkdir -p /opt/app
 COPY . /opt
 WORKDIR /opt/app
 
-ARG BUILD_ARCH=aarch64
+ARG BUILD_ARCH=amd64
 ARG NIGHTSCOUT_VERSION=dev
 # hadolint ignore=DL3008
 RUN \
