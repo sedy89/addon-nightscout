@@ -9,36 +9,3 @@ readonly api_key=$(bashio::config 'api_key')
 bashio::log.debug "Setting up API KEY: ${api_key}"
 export API_SECRET="${api_key}"
 
-#core
-if bashio::config.has_value 'de_normalize_dates'; then
-    readonly de_normalize_dates=$(bashio::config 'de_normalize_dates')
-    bashio::log.debug "Setting up DE_NORMALIZE_DATES: ${de_normalize_dates}"
-    export DE_NORMALIZE_DATES="${de_normalize_dates}"
-fi
-
-#mmconnect
-if bashio::config.has_value 'mmconnect_user_name'; then
-    readonly mmconnect_user_name=$(bashio::config 'mmconnect_user_name')
-    bashio::log.debug "Setting up MMCONNECT_USER_NAME: ${mmconnect_user_name}"
-    export MMCONNECT_USER_NAME="${mmconnect_user_name}"
-fi
-if bashio::config.has_value 'mmconnect_password'; then
-    readonly mmconnect_password=$(bashio::config 'mmconnect_password')
-    bashio::log.debug "Setting up MMCONNECT_PASSWORD: ${mmconnect_password}"
-    export MMCONNECT_PASSWORD="${mmconnect_password}"
-fi
-if bashio::config.has_value 'mmconnect_server'; then
-    readonly mmconnect_server=$(bashio::config 'mmconnect_server')
-    bashio::log.debug "Setting up MMCONNECT_SERVER: ${mmconnect_server}"
-    export MMCONNECT_SERVER="${mmconnect_server}"
-fi
-if bashio::config.has_value 'mmconnect_countrycode'; then
-    readonly mmconnect_countrycode=$(bashio::config 'mmconnect_countrycode')
-    bashio::log.debug "Setting up MMCONNECT_COUNTRYCODE: ${mmconnect_countrycode}"
-    export MMCONNECT_COUNTRYCODE="${mmconnect_countrycode}"
-fi
-if bashio::config.has_value 'mmconnect_verbose'; then
-    readonly mmconnect_verbose=$(bashio::config 'mmconnect_verbose')
-    bashio::log.debug "Setting up MMCONNECT_VERBOSE: ${mmconnect_verbose}"
-    export MMCONNECT_VERBOSE="${mmconnect_verbose}"
-fi
