@@ -3,12 +3,6 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-## v1.5.1
-downgrade ubuntu image 
-
-## v1.5.0
-removed mmconnect
-added mongodb lock file remove command
 
 ## v1.5.2
 - switched to amd64 base 
@@ -19,6 +13,7 @@ downgrade ubuntu image
 ## v1.5.0
 removed mmconnect
 added mongodb lock file remove command
+
 ## v1.4.9
 - patched transform.js regardign utc timestamp issue https://github.com/nightscout/minimed-connect-to-nightscout/issues/30
 
